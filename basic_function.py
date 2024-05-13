@@ -18,34 +18,23 @@ def getData(url):
     soup = bs4.BeautifulSoup(data, "html.parser")
     titles = soup.find_all("div", class_="title")
     dates = soup.find_all("div", class_="date")
-    the_title = []    
-    the_date = []
     require_data = []
 
     the_date_count = 0
 
     for title in titles:
         if title.a !=None:
-            # print(title.a.string)
             require_data.append({"title": title.a.string, "date": dates[the_date_count].string})
-            
-            # the_title = the_title + [title.a.string]
-            # the_date = the_date + [dates[the_date_count].string]
         the_date_count+=1
 
     # 3. capture lots pages of web
     nextLink=soup.find("a", string="‹ 上頁") # find the <a> tag with 上頁
-
-    # 處理title跟date
-    
 
     result_data = {
         "result":{
             "url":nextLink["href"],
             "require_data":require_data
             }}
-    print("*****",result_data)
 
     return result_data
-    # return [nextLink["href"],the_title,the_date]
 

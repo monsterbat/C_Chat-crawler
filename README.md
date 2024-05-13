@@ -1,7 +1,5 @@
-# 爬蟲
-## 西洽版爬蟲
-要知道最近哪部作品最紅、討論度最高
+## PTT Crawler
+To find out which works are the most popular and discussed recently.
 
-目前進度：
-填入要搜尋的分類或是關鍵字找數量，然後指定搜尋到的日期
-看出現的文章有多少
+Current progress:
+    Enter the category or keywords to search for the number of posts, then specify the search date to see how many articles appear.
